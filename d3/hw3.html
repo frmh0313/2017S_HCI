@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HCI 실습 과제 3</title>
+</head>
+<style>
+    svg {
+        font: 10px sans-serif;
+    }
+
+    .axis path,
+    .axis line {
+        fill: none;
+        stroke: #000;
+        shape-rendering: crispEdges;
+    }
+
+    .brush rect {
+        opacity: 0.2;
+    }
+
+    #scatter {
+        display: none;
+    }
+
+</style>
+<body>
+<div id="buttons">
+    <input type="radio" name="radioselect" value="bar_chart" onclick="radioButtonSelect('bar_chart')"> Bar Chart
+    <input type="radio" name="radioselect" value="scatter_plot" onclick="radioButtonSelect('scatter_plot')">ScatterPlot
+</div>
+<svg id="barchart" width="600" height="600">
+</svg>
+<svg id="scatter" width="600" height="600">
+</svg>
+
+<script type="text/javascript">
+    function radioButtonSelect(selected) {
+        if (selected=='bar_chart') {
+            document.getElementById('barchart').style.display='block';
+            document.getElementById('scatter').style.display='none';
+        } else if (selected=='scatter_plot') {
+            document.getElementById('barchart').style.display='none';
+            document.getElementById('scatter').style.display='block';
+        }
+    }
+
+</script>
+<script src="lib/d3.v3.min.js" charset="utf-8"></script>
+<script src="hw3.js" type="text/javascript"></script>
+<script src="영화.js" charset="utf-8"></script>
+</body>
+</html>
